@@ -19,7 +19,7 @@ wire [6:0] debug_bits;
 clock_scale clk_scaler (
     .en(ena),
     .clk(clk),
-    .rst(~rst_n),
+    .rst(rst_n),
     .scale_factor(11'd50),
     .clk_out(clk_scaled)
 );

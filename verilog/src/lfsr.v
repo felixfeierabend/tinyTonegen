@@ -13,16 +13,17 @@ module lfsr (
     initial noise_out = 1'b0;
     initial feedback = 1'b0;
 
-    always @(posedge(clk)) begin
-        if (rst) begin
+    always @(posedge(clk) or negedge(rst)) begin
+        if (!rst) begin
             noise_reg <= 16'hACE1;
+            noise_out <= 0;
         end else if (en_step) begin
             // Feedback-Value for feedbackpolynmoial x^16 + x^15 + x^13 + x^4 + 1
             feedback <= noise_reg[15] ^ noise_reg[15] ^ noise_reg[13] ^ noise_reg[4] ^ 1;
             // Shift noise-register by one and insert feedack-value
             noise_reg <= {noise_reg[14:0], feedback};
+            // Use LSB as noise-bit
+            noise_out <= noise_reg[0];
         end 
-        // Use LSB as noise-bit
-        noise_out <= noise_reg[0];
     end
 endmodule

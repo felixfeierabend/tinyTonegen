@@ -1,0 +1,6 @@
+set circuit1 [readnet spice /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-11-27_20-34-08/62-magic-spiceextraction/tt_um_felixfeierabend.spice]
+set circuit2 [readnet verilog /dev/null]
+puts "Reading SPICE netlist file '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'..."
+readnet spice /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
+readnet verilog /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-11-27_20-34-08/51-openroad-fillinsertion/tt_um_felixfeierabend.pnl.v $circuit2
+lvs "$circuit1 tt_um_felixfeierabend" "$circuit2 tt_um_felixfeierabend" /usr/local/lib/python3.12/dist-packages/librelane/scripts/netgen/setup.tcl /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-11-27_20-34-08/64-netgen-lvs/reports/lvs.netgen.rpt -blackbox -json

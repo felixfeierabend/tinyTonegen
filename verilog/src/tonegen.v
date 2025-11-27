@@ -6,9 +6,10 @@ module tonegen (
     output reg wave
 );
     reg[11:0] cnt = 0;
+    reg[11:0] next_cnt = 0;
     
-    always@(posedge clk or posedge(rst)) begin
-        if (rst) begin
+    always@(posedge(clk)) begin
+        if (!rst) begin
             cnt <= 0;
             wave <= 0;
         end else begin
@@ -21,8 +22,15 @@ module tonegen (
                     wave <= ~wave;
                 end else begin
                     cnt <= cnt - 1;
+                    wave <= wave;
                 end
             end 
         end
     end
+
+    always@(cnt) begin
+
+    end
+
+
 endmodule
