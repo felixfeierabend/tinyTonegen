@@ -11,7 +11,7 @@ module vibrato (
     reg[3:0] val = 0;
 
     always @(posedge(clk) or posedge(rst)) begin
-        if (rst) begin
+        if (!rst) begin
             val <= 0;
             div <= 0;
             dir <= 0;

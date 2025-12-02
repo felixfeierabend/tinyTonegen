@@ -1,0 +1,173 @@
+%Warning-WIDTHEXPAND: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/clock_scaler.v:9:30: Operator ASSIGN expects 12 bits on the Assign RHS, but Assign RHS's CONST '11'h1' generates 11 bits.
+                                                                                                 : ... note: In instance 'tiny_tonegen.signal_gen.tonegenA'
+    9 |     reg[11:0] next_counter = 11'b1;
+      |                              ^~~~~
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:5:1: ... note: In file included from 'tiny_tonegen.v'
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.040
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:19:12: Signal is not used: 'debug_bits'
+                                                                                                   : ... note: In instance 'tiny_tonegen'
+   19 | wire [6:0] debug_bits;
+      |            ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.040
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:20:26: Procedural assignment to declaration with initial value: 'periodA'
+                                                                                                : ... note: In instance 'tiny_tonegen.signal_gen'
+                                                                                                : ... Location of variable initialization
+   20 |     reg [11:0] periodA = 12'd200;
+      |                          ^~~~~~~
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:78:13: ... Location of variable process write
+                                                                                                : ... Perhaps should initialize instead using a reset in this process
+   78 |             periodA = 12'd200;
+      |             ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/PROCASSINIT?v=5.040
+                      ... Use "/* verilator lint_off PROCASSINIT */" and lint_on around source to disable this message.
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:21:22: Procedural assignment to declaration with initial value: 'volA'
+                                                                                                : ... note: In instance 'tiny_tonegen.signal_gen'
+                                                                                                : ... Location of variable initialization
+   21 |     reg [3:0] volA = 4'd8;
+      |                      ^~~~
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:79:13: ... Location of variable process write
+                                                                                                : ... Perhaps should initialize instead using a reset in this process
+   79 |             volA = 4'd8;
+      |             ^~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:24:19: Procedural assignment to declaration with initial value: 'enableA'
+                                                                                                : ... note: In instance 'tiny_tonegen.signal_gen'
+                                                                                                : ... Location of variable initialization
+   24 |     reg enableA = 1;
+      |                   ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:97:30: ... Location of variable process write
+                                                                                                : ... Perhaps should initialize instead using a reset in this process
+   97 |                     3'b101: {enableA, enableN} <= {data[1:0]};
+      |                              ^~~~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:25:19: Procedural assignment to declaration with initial value: 'enableN'
+                                                                                                : ... note: In instance 'tiny_tonegen.signal_gen'
+                                                                                                : ... Location of variable initialization
+   25 |     reg enableN = 1;
+      |                   ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:83:13: ... Location of variable process write
+                                                                                                : ... Perhaps should initialize instead using a reset in this process
+   83 |             enableN = 1;
+      |             ^~~~~~~
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:29:10: Signal is not used: 'pwm'
+                                                                                                 : ... note: In instance 'tiny_tonegen.signal_gen'
+   29 |     wire pwm;
+      |          ^~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/mixer.v:22:15: Bits of signal are not used: 'multA'[2:0]
+                                                                                            : ... note: In instance 'tiny_tonegen.signal_gen.mix'
+   22 |     reg [7:0] multA, multB;
+      |               ^~~~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:4:1: ... note: In file included from 'signal_gen.v'
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/mixer.v:22:22: Signal is not driven, nor used: 'multB'
+                                                                                            : ... note: In instance 'tiny_tonegen.signal_gen.mix'
+   22 |     reg [7:0] multA, multB;
+      |                      ^~~~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:4:1: ... note: In file included from 'signal_gen.v'
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/mixer.v:23:22: Signal is not driven, nor used: 'b_val'
+                                                                                            : ... note: In instance 'tiny_tonegen.signal_gen.mix'
+   23 |     reg [4:0] a_val, b_val, n_val;
+      |                      ^~~~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:4:1: ... note: In file included from 'signal_gen.v'
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/mixer.v:26:19: Procedural assignment to declaration with initial value: 'started'
+                                                                                           : ... note: In instance 'tiny_tonegen.signal_gen.mix'
+                                                                                           : ... Location of variable initialization
+   26 |     reg started = 0;
+      |                   ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:4:1: ... note: In file included from 'signal_gen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/mixer.v:37:13: ... Location of variable process write
+                                                                                           : ... Perhaps should initialize instead using a reset in this process
+   37 |             started <= 1'b0;
+      |             ^~~~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/pwm8.v:5:24: Procedural assignment to declaration with initial value: 'pwm_o'
+                                                                                         : ... note: In instance 'tiny_tonegen.signal_gen.pwmGen'
+                                                                                         : ... Location of variable initialization
+    5 |     output reg pwm_o = 0    
+      |                        ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:6:1: ... note: In file included from 'signal_gen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/pwm8.v:12:13: ... Location of variable process write
+                                                                                          : ... Perhaps should initialize instead using a reset in this process
+   12 |             pwm_o <= 0;
+      |             ^~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/pwm8.v:7:24: Procedural assignment to declaration with initial value: 'clk_cnt'
+                                                                                         : ... note: In instance 'tiny_tonegen.signal_gen.pwmGen'
+                                                                                         : ... Location of variable initialization
+    7 |     reg[7:0] clk_cnt = 0;    
+      |                        ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:6:1: ... note: In file included from 'signal_gen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/pwm8.v:11:13: ... Location of variable process write
+                                                                                          : ... Perhaps should initialize instead using a reset in this process
+   11 |             clk_cnt <= 8'b0;
+      |             ^~~~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/adsr.v:17:18: Procedural assignment to declaration with initial value: 'state'
+                                                                                          : ... note: In instance 'tiny_tonegen.signal_gen.envA_gen'
+                                                                                          : ... Location of variable initialization
+   17 | reg[1:0] state = IDLE;
+      |                  ^~~~
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:8:1: ... note: In file included from 'signal_gen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/adsr.v:24:27: ... Location of variable process write
+                                                                                          : ... Perhaps should initialize instead using a reset in this process
+   24 |             if (enable_i) state <= ATTACK;
+      |                           ^~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/adsr.v:19:19: Procedural assignment to declaration with initial value: 'timer'
+                                                                                          : ... note: In instance 'tiny_tonegen.signal_gen.envA_gen'
+                                                                                          : ... Location of variable initialization
+   19 | reg [3:0] timer = 0;
+      |                   ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:8:1: ... note: In file included from 'signal_gen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/adsr.v:30:13: ... Location of variable process write
+                                                                                          : ... Perhaps should initialize instead using a reset in this process
+   30 |             timer <= timer + 1;
+      |             ^~~~~
+%Warning-PROCASSINIT: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/clock_scaler.v:8:25: Procedural assignment to declaration with initial value: 'counter'
+                                                                                                 : ... note: In instance 'tiny_tonegen.signal_gen.tonegenA'
+                                                                                                 : ... Location of variable initialization
+    8 |     reg[11:0] counter = 0;
+      |                         ^
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:5:1: ... note: In file included from 'tiny_tonegen.v'
+                      /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/clock_scaler.v:14:13: ... Location of variable process write
+                                                                                                  : ... Perhaps should initialize instead using a reset in this process
+   14 |             counter <= 0;
+      |             ^~~~~~~
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/clock_scaler.v:9:15: Signal is not used: 'next_counter'
+                                                                                                  : ... note: In instance 'tiny_tonegen.signal_gen.tonegenA'
+    9 |     reg[11:0] next_counter = 11'b1;
+      |               ^~~~~~~~~~~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:5:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-UNUSEDSIGNAL: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/clock_scaler.v:10:9: Signal is not used: 'clk_val'
+                                                                                                  : ... note: In instance 'tiny_tonegen.signal_gen.tonegenA'
+   10 |     reg clk_val = 0;
+      |         ^~~~~~~
+                       /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:5:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-BLKSEQ: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:78:21: Blocking assignment '=' in sequential logic process
+                                                                                           : ... Suggest using delayed assignment '<='
+   78 |             periodA = 12'd200;
+      |                     ^
+                 /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+                 ... For warning description see https://verilator.org/warn/BLKSEQ?v=5.040
+                 ... Use "/* verilator lint_off BLKSEQ */" and lint_on around source to disable this message.
+%Warning-BLKSEQ: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:79:18: Blocking assignment '=' in sequential logic process
+                                                                                           : ... Suggest using delayed assignment '<='
+   79 |             volA = 4'd8;
+      |                  ^
+                 /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+%Warning-BLKSEQ: /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/signal_gen.v:83:21: Blocking assignment '=' in sequential logic process
+                                                                                           : ... Suggest using delayed assignment '<='
+   83 |             enableN = 1;
+      |                     ^
+                 /foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:4:1: ... note: In file included from 'tiny_tonegen.v'
+- V e r i l a t i o n   R e p o r t: Verilator 5.040 2025-08-30 rev v5.040
+- Verilator: Built from 0.288 MB sources in 307 modules, into 0.021 MB in 5 C++ files needing 0.000 MB
+- Verilator: Walltime 0.359 s (elab=0.036, cvt=0.031, bld=0.000); cpu 0.089 s on 1 threads; alloced 35.691 MB

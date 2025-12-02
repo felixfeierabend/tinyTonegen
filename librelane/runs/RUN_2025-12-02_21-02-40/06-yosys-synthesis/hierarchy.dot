@@ -1,0 +1,31 @@
+digraph "tiny_tonegen" {
+label="tiny_tonegen";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="signal_bit", color="black", fontcolor="black"];
+n2 [ shape=diamond, label="clk_scaled", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="signal_bit_out", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="data_in", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="write_strobe_in", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="address_in", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="ena", color="black", fontcolor="black"];
+n8 [ shape=octagon, label="rst_n", color="black", fontcolor="black"];
+n9 [ shape=octagon, label="clk", color="black", fontcolor="black"];
+c15 [ shape=record, label="{{<p10> address|<p9> clk|<p11> data|<p12> rst|<p13> write_strobe}|signal_gen\nsignal_generator|{<p14> signal_out}}",  ];
+v0 [ label="12'000000011001" ];
+c19 [ shape=record, label="{{<p9> clk|<p16> en|<p12> rst|<p17> scale_factor}|clk_scaler\nclock_scale|{<p18> clk_out}}",  ];
+x1 [shape=point, ];
+c15:p14:e -> n1:w [color="black", fontcolor="black", label=""];
+n1:e -> x1:w [color="black", fontcolor="black", label=""];
+c19:p18:e -> n2:w [color="black", fontcolor="black", label=""];
+n2:e -> c15:p9:w [color="black", fontcolor="black", label=""];
+x1:e -> n3:w [color="black", fontcolor="black", label=""];
+n4:e -> c15:p11:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n5:e -> c15:p13:w [color="black", fontcolor="black", label=""];
+n6:e -> c15:p10:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n7:e -> c19:p16:w [color="black", fontcolor="black", label=""];
+n8:e -> c15:p12:w [color="black", fontcolor="black", label=""];
+n8:e -> c19:p12:w [color="black", fontcolor="black", label=""];
+n9:e -> c19:p9:w [color="black", fontcolor="black", label=""];
+v0:e -> c19:p17:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

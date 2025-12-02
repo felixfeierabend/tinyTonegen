@@ -1,0 +1,6 @@
+set circuit1 [readnet spice /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-12-02_21-53-34/62-magic-spiceextraction/tiny_tonegen.spice]
+set circuit2 [readnet verilog /dev/null]
+puts "Reading SPICE netlist file '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'..."
+readnet spice /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
+readnet verilog /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-12-02_21-53-34/51-openroad-fillinsertion/tiny_tonegen.pnl.v $circuit2
+lvs "$circuit1 tiny_tonegen" "$circuit2 tiny_tonegen" /usr/local/lib/python3.12/dist-packages/librelane/scripts/netgen/setup.tcl /foss/designs/kvic_336007_ws25-kvic_ws25_v6/librelane/runs/RUN_2025-12-02_21-53-34/64-netgen-lvs/reports/lvs.netgen.rpt -blackbox -json

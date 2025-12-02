@@ -1,0 +1,201 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO tiny_tonegen
+  CLASS BLOCK ;
+  FOREIGN tiny_tonegen ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 160.000 BY 100.000 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 18.880 3.620 20.480 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 57.750 3.620 59.350 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 96.620 3.620 98.220 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 135.490 3.620 137.090 94.380 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 22.180 3.620 23.780 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 61.050 3.620 62.650 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 99.920 3.620 101.520 94.380 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 138.790 3.620 140.390 94.380 ;
+    END
+  END VSS
+  PIN address_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 67.200 98.000 67.760 100.000 ;
+    END
+  END address_in[0]
+  PIN address_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 73.920 98.000 74.480 100.000 ;
+    END
+  END address_in[1]
+  PIN address_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 63.840 98.000 64.400 100.000 ;
+    END
+  END address_in[2]
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 70.560 2.000 71.120 ;
+    END
+  END clk
+  PIN data_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 67.200 0.000 67.760 2.000 ;
+    END
+  END data_in[0]
+  PIN data_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 80.640 98.000 81.200 100.000 ;
+    END
+  END data_in[1]
+  PIN data_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 87.360 0.000 87.920 2.000 ;
+    END
+  END data_in[2]
+  PIN data_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 158.000 50.400 160.000 50.960 ;
+    END
+  END data_in[3]
+  PIN data_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 158.000 43.680 160.000 44.240 ;
+    END
+  END data_in[4]
+  PIN ena
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 57.120 2.000 57.680 ;
+    END
+  END ena
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 158.000 23.520 160.000 24.080 ;
+    END
+  END rst_n
+  PIN signal_bit_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 2.136000 ;
+    ANTENNADIFFAREA 2.111200 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 158.000 53.760 160.000 54.320 ;
+    END
+  END signal_bit_out
+  PIN write_strobe_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.741000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 70.560 98.000 71.120 100.000 ;
+    END
+  END write_strobe_in
+  OBS
+      LAYER Nwell ;
+        RECT 2.930 3.490 156.670 94.510 ;
+      LAYER Metal1 ;
+        RECT 3.360 3.620 156.240 94.380 ;
+      LAYER Metal2 ;
+        RECT 5.180 97.700 63.540 98.000 ;
+        RECT 64.700 97.700 66.900 98.000 ;
+        RECT 68.060 97.700 70.260 98.000 ;
+        RECT 71.420 97.700 73.620 98.000 ;
+        RECT 74.780 97.700 80.340 98.000 ;
+        RECT 81.500 97.700 154.980 98.000 ;
+        RECT 5.180 2.300 154.980 97.700 ;
+        RECT 5.180 2.000 66.900 2.300 ;
+        RECT 68.060 2.000 87.060 2.300 ;
+        RECT 88.220 2.000 154.980 2.300 ;
+      LAYER Metal3 ;
+        RECT 2.000 71.420 158.000 94.220 ;
+        RECT 2.300 70.260 158.000 71.420 ;
+        RECT 2.000 57.980 158.000 70.260 ;
+        RECT 2.300 56.820 158.000 57.980 ;
+        RECT 2.000 54.620 158.000 56.820 ;
+        RECT 2.000 53.460 157.700 54.620 ;
+        RECT 2.000 51.260 158.000 53.460 ;
+        RECT 2.000 50.100 157.700 51.260 ;
+        RECT 2.000 44.540 158.000 50.100 ;
+        RECT 2.000 43.380 157.700 44.540 ;
+        RECT 2.000 24.380 158.000 43.380 ;
+        RECT 2.000 23.220 157.700 24.380 ;
+        RECT 2.000 3.780 158.000 23.220 ;
+  END
+END tiny_tonegen
+END LIBRARY
+

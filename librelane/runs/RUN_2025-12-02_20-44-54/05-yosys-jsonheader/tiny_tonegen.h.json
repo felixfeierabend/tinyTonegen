@@ -1,0 +1,3804 @@
+{
+  "creator": "Yosys 0.57 (git sha1 3aca86049, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+  "modules": {
+    "tiny_tonegen": {
+      "attributes": {
+        "hdlname": "tiny_tonegen",
+        "top": "00000000000000000000000000000001",
+        "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:6.1-39.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "ena": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "address_in": {
+          "direction": "input",
+          "bits": [ 5, 6, 7 ]
+        },
+        "write_strobe_in": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "data_in": {
+          "direction": "input",
+          "bits": [ 9, 10, 11, 12, 13 ]
+        },
+        "signal_bit_out": {
+          "direction": "output",
+          "bits": [ 14 ]
+        }
+      },
+      "cells": {
+        "$flatten\\clk_scaler.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20$11": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20.28-20.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
+          }
+        },
+        "$flatten\\clk_scaler.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16$9": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
+            "B": [ "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 59 ]
+          }
+        },
+        "$flatten\\clk_scaler.$not$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18$10": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18.28-18.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "Y": [ 61 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procdff$217": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 62 ],
+            "Q": [ 60 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procdff$222": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ],
+            "Q": [ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.13-21.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 59 ],
+            "Y": [ 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$102": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.22-15.24|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.18-25.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86 ],
+            "S": [ 4 ],
+            "Y": [ 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$106": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.13-21.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 61 ],
+            "S": [ 59 ],
+            "Y": [ 87 ]
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$108": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.22-15.24|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.18-25.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 87 ],
+            "S": [ 4 ],
+            "Y": [ 62 ]
+          }
+        },
+        "$flatten\\signal_gen.$auto$proc_dff.cc:242:proc_dff$231": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 88, 89, 90, 91 ],
+            "B": [ 92, 93, 94, 95 ],
+            "S": [ 3 ],
+            "Y": [ 96, 97, 98, 99 ]
+          }
+        },
+        "$flatten\\signal_gen.$auto$proc_dff.cc:242:proc_dff$236": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 100 ],
+            "B": [ 101 ],
+            "S": [ 3 ],
+            "Y": [ 102 ]
+          }
+        },
+        "$flatten\\signal_gen.$procdff$225": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "000011001000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114 ],
+            "Q": [ 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126 ]
+          }
+        },
+        "$flatten\\signal_gen.$procdff$228": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "1000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 127, 128, 129, 130 ],
+            "Q": [ 131, 132, 133, 134 ]
+          }
+        },
+        "$flatten\\signal_gen.$procdff$233": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 96, 97, 98, 99 ],
+            "Q": [ 92, 93, 94, 95 ]
+          }
+        },
+        "$flatten\\signal_gen.$procdff$238": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 102 ],
+            "Q": [ 101 ]
+          }
+        },
+        "$flatten\\signal_gen.$procdff$241": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 135 ],
+            "Q": [ 136 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$110": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:82.47-82.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 101 ],
+            "B": [ 10 ],
+            "S": [ 137 ],
+            "Y": [ 138 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$111_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:82.47-82.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 137 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$112": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.17-76.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.13-90.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 101 ],
+            "B": [ 138 ],
+            "S": [ 8 ],
+            "Y": [ 100 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$116": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:78.62-78.62|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 131, 132, 133, 134 ],
+            "B": [ 9, 10, 11, 12 ],
+            "S": [ 139 ],
+            "Y": [ 140, 141, 142, 143 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$117_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:78.62-78.62|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 139 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$118": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.17-76.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.13-90.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 131, 132, 133, 134 ],
+            "B": [ 140, 141, 142, 143 ],
+            "S": [ 8 ],
+            "Y": [ 127, 128, 129, 130 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$123": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.31-77.31|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126 ],
+            "B": [ 9, 10, 11, 12, 13, 120, 121, 122, 123, 124, 125, 126 ],
+            "S": [ 144 ],
+            "Y": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$124_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.31-77.31|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7 ],
+            "Y": [ 144 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$125": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.17-76.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.13-90.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126 ],
+            "B": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ],
+            "S": [ 8 ],
+            "Y": [ 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$127": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:82.47-82.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 136 ],
+            "B": [ 9 ],
+            "S": [ 157 ],
+            "Y": [ 158 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$128_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:82.47-82.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 157 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$129": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.17-76.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.13-90.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 136 ],
+            "B": [ 158 ],
+            "S": [ 8 ],
+            "Y": [ 135 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$132": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:80.47-80.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 92, 93, 94, 95 ],
+            "B": [ 9, 10, 11, 12 ],
+            "S": [ 159 ],
+            "Y": [ 160, 161, 162, 163 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$133_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:80.47-80.47|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:77.17-89.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 159 ]
+          }
+        },
+        "$flatten\\signal_gen.$procmux$134": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.17-76.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:76.13-90.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 92, 93, 94, 95 ],
+            "B": [ 160, 161, 162, 163 ],
+            "S": [ 8 ],
+            "Y": [ 88, 89, 90, 91 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:30$41": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:30.22-30.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:34$44": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:34.32-34.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:42$45": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:42.22-42.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:53$50": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:53.22-53.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31$42": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.17-31.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 300 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43$46": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.17-43.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 301 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54$51": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.17-54.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 302 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$gt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45$47": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45.21-45.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 303 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$gt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56$52": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.21-56.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 304 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$lt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33$43": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.21-33.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 305 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procdff$242": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 306, 307, 308, 309 ],
+            "Q": [ 200, 201, 202, 203 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procdff$243": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 310, 311 ],
+            "Q": [ 312, 313 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procdff$244": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 314, 315, 316, 317 ],
+            "Q": [ 164, 165, 166, 167 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$136": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.17-54.35|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.13-60.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 268, 269, 270, 271 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 302 ],
+            "Y": [ 318, 319, 320, 321 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$138": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 165, 166, 167 ],
+            "B": [ 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329 ],
+            "S": [ 330, 331, 332 ],
+            "Y": [ 314, 315, 316, 317 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$139_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "1" ],
+            "Y": [ 330 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$140": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.17-43.33|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.13-47.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 236, 237, 238, 239 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 301 ],
+            "Y": [ 322, 323, 324, 325 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$142_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:38.12-38.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "0", "1" ],
+            "Y": [ 331 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$143": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.17-31.34|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.13-37.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 168, 169, 170, 171 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 300 ],
+            "Y": [ 326, 327, 328, 329 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$145_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:26.12-26.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "0" ],
+            "Y": [ 332 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$147": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.21-56.32|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.17-59.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ 312, 313 ],
+            "S": [ 304 ],
+            "Y": [ 333, 334 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$149": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.17-54.35|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.13-60.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ 333, 334 ],
+            "S": [ 302 ],
+            "Y": [ 335, 336 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$151": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000100",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ 335, 336, 337, 338, 339, 340, 341, 342 ],
+            "S": [ 343, 344, 345, 346 ],
+            "Y": [ 310, 311 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$152_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "1" ],
+            "Y": [ 343 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$153": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:48.17-48.26|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:48.13-48.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1" ],
+            "B": [ 312, 313 ],
+            "S": [ 101 ],
+            "Y": [ 337, 338 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$155_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:38.12-38.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "0", "1" ],
+            "Y": [ 344 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$157": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.21-33.33|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.17-36.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "1" ],
+            "B": [ 312, 313 ],
+            "S": [ 305 ],
+            "Y": [ 347, 348 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$159": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.17-31.34|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.13-37.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ 347, 348 ],
+            "S": [ 300 ],
+            "Y": [ 339, 340 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$161_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:26.12-26.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "0" ],
+            "Y": [ 345 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$162": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:24.17-24.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:24.13-24.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "0" ],
+            "S": [ 101 ],
+            "Y": [ 341, 342 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$164_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.17-22.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "Y": [ 346 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$166": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.21-56.32|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.17-59.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 349, 350, 351, 352 ],
+            "S": [ 304 ],
+            "Y": [ 353, 354, 355, 356 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$168": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.17-54.35|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.13-60.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 353, 354, 355, 356 ],
+            "S": [ 302 ],
+            "Y": [ 357, 358, 359, 360 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$170": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000100",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, "0", "0", "0", "0" ],
+            "S": [ 369, 370, 371, 372 ],
+            "Y": [ 306, 307, 308, 309 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$171_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:49.12-49.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "1" ],
+            "Y": [ 369 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$172": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45.21-45.40|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45.17-46.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 373, 374, 375, 376 ],
+            "S": [ 303 ],
+            "Y": [ 377, 378, 379, 380 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$174": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.17-43.33|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.13-47.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 377, 378, 379, 380 ],
+            "S": [ 301 ],
+            "Y": [ 361, 362, 363, 364 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$176_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:38.12-38.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "0", "1" ],
+            "Y": [ 370 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$178": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.21-33.33|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.17-36.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 204, 205, 206, 207 ],
+            "S": [ 305 ],
+            "Y": [ 381, 382, 383, 384 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$180": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.17-31.34|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.13-37.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ 381, 382, 383, 384 ],
+            "S": [ 300 ],
+            "Y": [ 365, 366, 367, 368 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$182_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:26.12-26.12|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "B": [ "1", "0" ],
+            "Y": [ 371 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$183_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.17-22.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:22.5-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313 ],
+            "Y": [ 372 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$sub$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:46$48": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:46.32-46.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 373, 374, 375, 376, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412 ]
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$sub$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:57$53": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:57.32-57.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 200, 201, 202, 203 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 349, 350, 351, 352, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:43$22": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:43.24-43.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 441, 442, 443, 444, 445 ],
+            "B": [ 446, 447, 448, 449, 450 ],
+            "Y": [ 451, 452, 453, 454, 455, 456 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$logic_and$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41$18": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41.27-41.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 101 ],
+            "B": [ 457 ],
+            "Y": [ 458 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$logic_and$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42$20": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42.27-42.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 136 ],
+            "B": [ 459 ],
+            "Y": [ 460 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$mul$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:40$17": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:40.26-40.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 131, 132, 133, 134 ],
+            "B": [ 200, 201, 202, 203 ],
+            "Y": [ 461, 462, 463, 464, 465, 466, 467, 468 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$207": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 469, 470, 471, 472, 473, 474, 475, 476 ],
+            "Q": [ 477, 478, 479, 480, 481, 482, 483, 484 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$208": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 485, 486, 487, 488, 489, 490, 491, 492 ],
+            "Q": [ 493, 494, 495, 496, 497, 498, 499, 500 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$209": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 501, 502, 503, 504, 505 ],
+            "Q": [ 441, 442, 443, 444, 445 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$210": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 506, 507, 508, 509, 510 ],
+            "Q": [ 446, 447, 448, 449, 450 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$211": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 511, 512, 513, 514, 515, 516 ],
+            "Q": [ 517, 518, 519, 520, 521, 522 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procdff$212": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 523 ],
+            "Q": [ 524 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$63": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ "0", "0", 517, 518, 519, 520, 521, 522 ],
+            "S": [ 524 ],
+            "Y": [ 525, 526, 527, 528, 529, 530, 531, 532 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$66": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 525, 526, 527, 528, 529, 530, 531, 532 ],
+            "S": [ 3 ],
+            "Y": [ 469, 470, 471, 472, 473, 474, 475, 476 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$69": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 524 ],
+            "S": [ 524 ],
+            "Y": [ 533 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$72": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 533 ],
+            "S": [ 3 ],
+            "Y": [ 523 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$75": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 517, 518, 519, 520, 521, 522 ],
+            "B": [ 451, 452, 453, 454, 455, 456 ],
+            "S": [ 524 ],
+            "Y": [ 534, 535, 536, 537, 538, 539 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$78": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0" ],
+            "B": [ 534, 535, 536, 537, 538, 539 ],
+            "S": [ 3 ],
+            "Y": [ 511, 512, 513, 514, 515, 516 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$81": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 446, 447, 448, 449, 450 ],
+            "B": [ 540, 541, 542, 543, 544 ],
+            "S": [ 524 ],
+            "Y": [ 545, 546, 547, 548, 549 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$84": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ 545, 546, 547, 548, 549 ],
+            "S": [ 3 ],
+            "Y": [ 506, 507, 508, 509, 510 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 441, 442, 443, 444, 445 ],
+            "B": [ 550, 551, 552, 553, 554 ],
+            "S": [ 524 ],
+            "Y": [ 555, 556, 557, 558, 559 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$90": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ 555, 556, 557, 558, 559 ],
+            "S": [ 3 ],
+            "Y": [ 501, 502, 503, 504, 505 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$93": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.17-36.25|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:36.13-45.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 493, 494, 495, 496, 497, 498, 499, 500 ],
+            "B": [ 461, 462, 463, 464, 465, 466, 467, 468 ],
+            "S": [ 524 ],
+            "Y": [ 560, 561, 562, 563, 564, 565, 566, 567 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$96": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.13-24.17|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:24.9-46.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 560, 561, 562, 563, 564, 565, 566, 567 ],
+            "S": [ 3 ],
+            "Y": [ 485, 486, 487, 488, 489, 490, 491, 492 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41$19": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41.26-41.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ 496, 497, 498, 499, 500 ],
+            "S": [ 458 ],
+            "Y": [ 550, 551, 552, 553, 554 ]
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42$21": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42.26-42.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ "0", 92, 93, 94, 95 ],
+            "S": [ 460 ],
+            "Y": [ 540, 541, 542, 543, 544 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$auto$opt_expr.cc:716:replace_const_cells$245": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 568 ],
+            "Y": [ 569 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$auto$proc_dff.cc:242:proc_dff$204": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 570 ],
+            "B": [ 571 ],
+            "S": [ 3 ],
+            "Y": [ 572 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procdff$194": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 573 ],
+            "Q": [ 459 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procdff$199": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1010110011100001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589 ],
+            "Q": [ 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procdff$206": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 60 ],
+            "D": [ 572 ],
+            "Q": [ 570 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procmux$56": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.22-20.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.18-27.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 570 ],
+            "B": [ 569 ],
+            "S": [ 136 ],
+            "Y": [ 571 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procmux$58": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.22-20.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.18-27.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605 ],
+            "B": [ 570, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604 ],
+            "S": [ 136 ],
+            "Y": [ 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$procmux$60": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.22-20.29|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:20.18-27.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 459 ],
+            "B": [ 590 ],
+            "S": [ 136 ],
+            "Y": [ 573 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$26": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 605 ],
+            "B": [ 605 ],
+            "Y": [ 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$27": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.70"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637 ],
+            "B": [ 603 ],
+            "Y": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ]
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$28": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ],
+            "B": [ 594 ],
+            "Y": [ 568, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700 ]
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:14$35": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:14.24-14.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 701, 702, 703, 704, 705, 706, 707, 708 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740 ]
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$lt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15$36": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15.23-15.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 701, 702, 703, 704, 705, 706, 707, 708 ],
+            "B": [ 477, 478, 479, 480, 481, 482, 483, 484 ],
+            "Y": [ 741 ]
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$procdff$186": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:9.5-17.8"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ 742 ],
+            "ALOAD": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ "0" ],
+            "Q": [ 14 ]
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$procdff$189": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:9.5-17.8"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ 709, 710, 711, 712, 713, 714, 715, 716 ],
+            "ALOAD": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Q": [ 701, 702, 703, 704, 705, 706, 707, 708 ]
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15$37": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15.22-15.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 741 ],
+            "Y": [ 742 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20$11": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20.28-20.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16$9": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ],
+            "B": [ 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126 ],
+            "Y": [ 787 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$not$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18$10": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18.28-18.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 457 ],
+            "Y": [ 788 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procdff$217": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 789 ],
+            "Q": [ 457 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procdff$222": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 60 ],
+            "D": [ 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801 ],
+            "Q": [ 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.13-21.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 787 ],
+            "Y": [ 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$102": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.22-15.24|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.18-25.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813 ],
+            "S": [ 101 ],
+            "Y": [ 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$106": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.13-21.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 457 ],
+            "B": [ 788 ],
+            "S": [ 787 ],
+            "Y": [ 814 ]
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$108": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.22-15.24|/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:15.18-25.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 814 ],
+            "S": [ 101 ],
+            "Y": [ 789 ]
+          }
+        }
+      },
+      "netnames": {
+        "$flatten\\clk_scaler.$0\\clk_out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 62 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          }
+        },
+        "$flatten\\clk_scaler.$0\\counter[11:0]": {
+          "hide_name": 1,
+          "bits": [ 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          }
+        },
+        "$flatten\\clk_scaler.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20$11_Y": {
+          "hide_name": 1,
+          "bits": [ 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20.28-20.39",
+            "unused_bits": "12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\clk_scaler.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16$9_Y": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40"
+          }
+        },
+        "$flatten\\clk_scaler.$not$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18$10_Y": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18.28-18.36"
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$100_Y": {
+          "hide_name": 1,
+          "bits": [ 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\clk_scaler.$procmux$106_Y": {
+          "hide_name": 1,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$0\\enableA[0:0]": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          }
+        },
+        "$flatten\\signal_gen.$0\\enableN[0:0]": {
+          "hide_name": 1,
+          "bits": [ 135 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          }
+        },
+        "$flatten\\signal_gen.$0\\periodA[11:0]": {
+          "hide_name": 1,
+          "bits": [ 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          }
+        },
+        "$flatten\\signal_gen.$0\\volA[3:0]": {
+          "hide_name": 1,
+          "bits": [ 127, 128, 129, 130 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          }
+        },
+        "$flatten\\signal_gen.$0\\volN[3:0]": {
+          "hide_name": 1,
+          "bits": [ 88, 89, 90, 91 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:63.5-92.8"
+          }
+        },
+        "$flatten\\signal_gen.$auto$rtlil.cc:3094:Mux$232": {
+          "hide_name": 1,
+          "bits": [ 96, 97, 98, 99 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$auto$rtlil.cc:3094:Mux$237": {
+          "hide_name": 1,
+          "bits": [ 102 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$110_Y": {
+          "hide_name": 1,
+          "bits": [ 138 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$111_CMP": {
+          "hide_name": 1,
+          "bits": [ 137 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$116_Y": {
+          "hide_name": 1,
+          "bits": [ 140, 141, 142, 143 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$117_CMP": {
+          "hide_name": 1,
+          "bits": [ 139 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$123_Y": {
+          "hide_name": 1,
+          "bits": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$124_CMP": {
+          "hide_name": 1,
+          "bits": [ 144 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$127_Y": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$128_CMP": {
+          "hide_name": 1,
+          "bits": [ 157 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$132_Y": {
+          "hide_name": 1,
+          "bits": [ 160, 161, 162, 163 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.$procmux$133_CMP": {
+          "hide_name": 1,
+          "bits": [ 159 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$0\\level_o[3:0]": {
+          "hide_name": 1,
+          "bits": [ 306, 307, 308, 309 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$0\\state[1:0]": {
+          "hide_name": 1,
+          "bits": [ 310, 311 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$0\\timer[3:0]": {
+          "hide_name": 1,
+          "bits": [ 314, 315, 316, 317 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:21.1-65.4"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:30$41_Y": {
+          "hide_name": 1,
+          "bits": [ 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:30.22-30.31",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:34$44_Y": {
+          "hide_name": 1,
+          "bits": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:34.32-34.43",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:42$45_Y": {
+          "hide_name": 1,
+          "bits": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:42.22-42.31",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:53$50_Y": {
+          "hide_name": 1,
+          "bits": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:53.22-53.31",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31$42_Y": {
+          "hide_name": 1,
+          "bits": [ 300 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:31.17-31.34"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43$46_Y": {
+          "hide_name": 1,
+          "bits": [ 301 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:43.17-43.33"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54$51_Y": {
+          "hide_name": 1,
+          "bits": [ 302 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:54.17-54.35"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$gt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45$47_Y": {
+          "hide_name": 1,
+          "bits": [ 303 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:45.21-45.40"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$gt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56$52_Y": {
+          "hide_name": 1,
+          "bits": [ 304 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:56.21-56.32"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$lt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33$43_Y": {
+          "hide_name": 1,
+          "bits": [ 305 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:33.21-33.33"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$136_Y": {
+          "hide_name": 1,
+          "bits": [ 318, 319, 320, 321 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$139_CMP": {
+          "hide_name": 1,
+          "bits": [ 330 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$140_Y": {
+          "hide_name": 1,
+          "bits": [ 322, 323, 324, 325 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$142_CMP": {
+          "hide_name": 1,
+          "bits": [ 331 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$143_Y": {
+          "hide_name": 1,
+          "bits": [ 326, 327, 328, 329 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$145_CMP": {
+          "hide_name": 1,
+          "bits": [ 332 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$147_Y": {
+          "hide_name": 1,
+          "bits": [ 333, 334 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$149_Y": {
+          "hide_name": 1,
+          "bits": [ 335, 336 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$152_CMP": {
+          "hide_name": 1,
+          "bits": [ 343 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$153_Y": {
+          "hide_name": 1,
+          "bits": [ 337, 338 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$155_CMP": {
+          "hide_name": 1,
+          "bits": [ 344 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$157_Y": {
+          "hide_name": 1,
+          "bits": [ 347, 348 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$159_Y": {
+          "hide_name": 1,
+          "bits": [ 339, 340 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$161_CMP": {
+          "hide_name": 1,
+          "bits": [ 345 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$162_Y": {
+          "hide_name": 1,
+          "bits": [ 341, 342 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$164_CMP": {
+          "hide_name": 1,
+          "bits": [ 346 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$166_Y": {
+          "hide_name": 1,
+          "bits": [ 353, 354, 355, 356 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$168_Y": {
+          "hide_name": 1,
+          "bits": [ 357, 358, 359, 360 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$171_CMP": {
+          "hide_name": 1,
+          "bits": [ 369 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$172_Y": {
+          "hide_name": 1,
+          "bits": [ 377, 378, 379, 380 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$174_Y": {
+          "hide_name": 1,
+          "bits": [ 361, 362, 363, 364 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$176_CMP": {
+          "hide_name": 1,
+          "bits": [ 370 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$178_Y": {
+          "hide_name": 1,
+          "bits": [ 381, 382, 383, 384 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$180_Y": {
+          "hide_name": 1,
+          "bits": [ 365, 366, 367, 368 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$182_CMP": {
+          "hide_name": 1,
+          "bits": [ 371 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$procmux$183_CMP": {
+          "hide_name": 1,
+          "bits": [ 372 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$sub$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:46$48_Y": {
+          "hide_name": 1,
+          "bits": [ 373, 374, 375, 376, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:46.32-46.43",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\envA_gen.$sub$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:57$53_Y": {
+          "hide_name": 1,
+          "bits": [ 349, 350, 351, 352, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:57.32-57.42",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\a_val[4:0]": {
+          "hide_name": 1,
+          "bits": [ 501, 502, 503, 504, 505 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\mixout[7:0]": {
+          "hide_name": 1,
+          "bits": [ 469, 470, 471, 472, 473, 474, 475, 476 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\multA[7:0]": {
+          "hide_name": 1,
+          "bits": [ 485, 486, 487, 488, 489, 490, 491, 492 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\n_val[4:0]": {
+          "hide_name": 1,
+          "bits": [ 506, 507, 508, 509, 510 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\started[0:0]": {
+          "hide_name": 1,
+          "bits": [ 523 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$0\\sum[5:0]": {
+          "hide_name": 1,
+          "bits": [ 511, 512, 513, 514, 515, 516 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:23.5-47.8"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:43$22_Y": {
+          "hide_name": 1,
+          "bits": [ 451, 452, 453, 454, 455, 456 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:43.24-43.37"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$logic_and$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41$18_Y": {
+          "hide_name": 1,
+          "bits": [ 458 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41.27-41.43"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$logic_and$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42$20_Y": {
+          "hide_name": 1,
+          "bits": [ 460 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42.27-42.47"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$mul$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:40$17_Y": {
+          "hide_name": 1,
+          "bits": [ 461, 462, 463, 464, 465, 466, 467, 468 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:40.26-40.40"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$63_Y": {
+          "hide_name": 1,
+          "bits": [ 525, 526, 527, 528, 529, 530, 531, 532 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$69_Y": {
+          "hide_name": 1,
+          "bits": [ 533 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$75_Y": {
+          "hide_name": 1,
+          "bits": [ 534, 535, 536, 537, 538, 539 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$81_Y": {
+          "hide_name": 1,
+          "bits": [ 545, 546, 547, 548, 549 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 555, 556, 557, 558, 559 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$procmux$93_Y": {
+          "hide_name": 1,
+          "bits": [ 560, 561, 562, 563, 564, 565, 566, 567 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41$19_Y": {
+          "hide_name": 1,
+          "bits": [ 550, 551, 552, 553, 554 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:41.26-41.64"
+          }
+        },
+        "$flatten\\signal_gen.\\mix.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42$21_Y": {
+          "hide_name": 1,
+          "bits": [ 540, 541, 542, 543, 544 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:42.26-42.77"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$0\\feedback[0:0]": {
+          "hide_name": 1,
+          "bits": [ 571 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$0\\noise_out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 573 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$0\\noise_reg[15:0]": {
+          "hide_name": 1,
+          "bits": [ 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:16.5-28.8"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$auto$rtlil.cc:2959:Not$246": {
+          "hide_name": 1,
+          "bits": [ 569 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$auto$rtlil.cc:3094:Mux$205": {
+          "hide_name": 1,
+          "bits": [ 572 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$26_Y": {
+          "hide_name": 1,
+          "bits": [ 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.54"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$27_Y": {
+          "hide_name": 1,
+          "bits": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.70"
+          }
+        },
+        "$flatten\\signal_gen.\\noise_gen.$xor$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22$28_Y": {
+          "hide_name": 1,
+          "bits": [ 568, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:22.25-22.85",
+            "unused_bits": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:14$35_Y": {
+          "hide_name": 1,
+          "bits": [ 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:14.24-14.35",
+            "unused_bits": "8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$lt$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15$36_Y": {
+          "hide_name": 1,
+          "bits": [ 741 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15.23-15.43"
+          }
+        },
+        "$flatten\\signal_gen.\\pwmGen.$ternary$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15$37_Y": {
+          "hide_name": 1,
+          "bits": [ 742 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:15.22-15.58"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$0\\clk_out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 789 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$0\\counter[11:0]": {
+          "hide_name": 1,
+          "bits": [ 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:11.5-26.8"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$add$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20$11_Y": {
+          "hide_name": 1,
+          "bits": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:20.28-20.39",
+            "unused_bits": "12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$ge$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16$9_Y": {
+          "hide_name": 1,
+          "bits": [ 787 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:16.17-16.40"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$not$/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18$10_Y": {
+          "hide_name": 1,
+          "bits": [ 788 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:18.28-18.36"
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$100_Y": {
+          "hide_name": 1,
+          "bits": [ 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\signal_gen.\\tonegenA.$procmux$106_Y": {
+          "hide_name": 1,
+          "bits": [ 814 ],
+          "attributes": {
+          }
+        },
+        "address_in": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:10.20-10.30"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:7.23-7.26"
+          }
+        },
+        "clk_scaled": {
+          "hide_name": 0,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:17.6-17.16"
+          }
+        },
+        "clk_scaler.counter": {
+          "hide_name": 0,
+          "bits": [ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
+          "attributes": {
+            "hdlname": "clk_scaler counter",
+            "init": "000000000000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:8.15-8.22"
+          }
+        },
+        "data_in": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:12.20-12.27"
+          }
+        },
+        "ena": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:9.20-9.23"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:8.23-8.28"
+          }
+        },
+        "signal_bit_out": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "init": "0",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:14.17-14.31"
+          }
+        },
+        "signal_gen.enableA": {
+          "hide_name": 0,
+          "bits": [ 101 ],
+          "attributes": {
+            "hdlname": "signal_gen enableA",
+            "init": "1",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:23.9-23.16"
+          }
+        },
+        "signal_gen.enableN": {
+          "hide_name": 0,
+          "bits": [ 136 ],
+          "attributes": {
+            "hdlname": "signal_gen enableN",
+            "init": "1",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:24.9-24.16"
+          }
+        },
+        "signal_gen.envA": {
+          "hide_name": 0,
+          "bits": [ 200, 201, 202, 203 ],
+          "attributes": {
+            "hdlname": "signal_gen envA",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:29.15-29.19"
+          }
+        },
+        "signal_gen.envA_gen.state": {
+          "hide_name": 0,
+          "bits": [ 312, 313 ],
+          "attributes": {
+            "hdlname": "signal_gen envA_gen state",
+            "init": "00",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:17.10-17.15"
+          }
+        },
+        "signal_gen.envA_gen.timer": {
+          "hide_name": 0,
+          "bits": [ 164, 165, 166, 167 ],
+          "attributes": {
+            "hdlname": "signal_gen envA_gen timer",
+            "init": "0000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././adsr.v:19.11-19.16"
+          }
+        },
+        "signal_gen.mix.a_val": {
+          "hide_name": 0,
+          "bits": [ 441, 442, 443, 444, 445 ],
+          "attributes": {
+            "hdlname": "signal_gen mix a_val",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:18.15-18.20"
+          }
+        },
+        "signal_gen.mix.mixout": {
+          "hide_name": 0,
+          "bits": [ 477, 478, 479, 480, 481, 482, 483, 484 ],
+          "attributes": {
+            "hdlname": "signal_gen mix mixout",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:14.22-14.28"
+          }
+        },
+        "signal_gen.mix.multA": {
+          "hide_name": 0,
+          "bits": [ 493, 494, 495, 496, 497, 498, 499, 500 ],
+          "attributes": {
+            "hdlname": "signal_gen mix multA",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:17.15-17.20"
+          }
+        },
+        "signal_gen.mix.n_val": {
+          "hide_name": 0,
+          "bits": [ 446, 447, 448, 449, 450 ],
+          "attributes": {
+            "hdlname": "signal_gen mix n_val",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:18.29-18.34"
+          }
+        },
+        "signal_gen.mix.started": {
+          "hide_name": 0,
+          "bits": [ 524 ],
+          "attributes": {
+            "hdlname": "signal_gen mix started",
+            "init": "0",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:21.9-21.16"
+          }
+        },
+        "signal_gen.mix.sum": {
+          "hide_name": 0,
+          "bits": [ 517, 518, 519, 520, 521, 522 ],
+          "attributes": {
+            "hdlname": "signal_gen mix sum",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:19.15-19.18"
+          }
+        },
+        "signal_gen.mix.waveA": {
+          "hide_name": 0,
+          "bits": [ 457 ],
+          "attributes": {
+            "hdlname": "signal_gen mix waveA",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././mixer.v:4.11-4.16"
+          }
+        },
+        "signal_gen.noise_gen.feedback": {
+          "hide_name": 0,
+          "bits": [ 570 ],
+          "attributes": {
+            "hdlname": "signal_gen noise_gen feedback",
+            "init": "0",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:10.9-10.17"
+          }
+        },
+        "signal_gen.noise_gen.noise_out": {
+          "hide_name": 0,
+          "bits": [ 459 ],
+          "attributes": {
+            "hdlname": "signal_gen noise_gen noise_out",
+            "init": "0",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:7.16-7.25"
+          }
+        },
+        "signal_gen.noise_gen.noise_reg": {
+          "hide_name": 0,
+          "bits": [ 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605 ],
+          "attributes": {
+            "hdlname": "signal_gen noise_gen noise_reg",
+            "init": "1010110011100001",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././lfsr.v:9.15-9.24"
+          }
+        },
+        "signal_gen.periodA": {
+          "hide_name": 0,
+          "bits": [ 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126 ],
+          "attributes": {
+            "hdlname": "signal_gen periodA",
+            "init": "000011001000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:19.16-19.23"
+          }
+        },
+        "signal_gen.pwmGen.clk_cnt": {
+          "hide_name": 0,
+          "bits": [ 701, 702, 703, 704, 705, 706, 707, 708 ],
+          "attributes": {
+            "hdlname": "signal_gen pwmGen clk_cnt",
+            "init": "00000000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/././pwm8.v:7.14-7.21"
+          }
+        },
+        "signal_gen.tonegenA.counter": {
+          "hide_name": 0,
+          "bits": [ 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ],
+          "attributes": {
+            "hdlname": "signal_gen tonegenA counter",
+            "init": "000000000000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./clock_scaler.v:8.15-8.22"
+          }
+        },
+        "signal_gen.volA": {
+          "hide_name": 0,
+          "bits": [ 131, 132, 133, 134 ],
+          "attributes": {
+            "hdlname": "signal_gen volA",
+            "init": "1000",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:20.15-20.19"
+          }
+        },
+        "signal_gen.volN": {
+          "hide_name": 0,
+          "bits": [ 92, 93, 94, 95 ],
+          "attributes": {
+            "hdlname": "signal_gen volN",
+            "init": "0011",
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/./signal_gen.v:21.15-21.19"
+          }
+        },
+        "write_strobe_in": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/foss/designs/kvic_336007_ws25-kvic_ws25_v6/verilog/src/tiny_tonegen.v:11.17-11.32"
+          }
+        }
+      }
+    }
+  }
+}
